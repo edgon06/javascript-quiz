@@ -1,0 +1,101 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Definir variables css */
+:root{
+    --hue-neutral:200;
+    --hue-mal: 0;
+    --hue-correcto: 145;
+}
+
+
+body{
+
+    --hue: var(--hue-neutral);
+
+    padding: 0;
+    margin: 0;
+    /* display: flex permite ordenar las cosas como si fuese una fila */
+    display: flex;
+    /* width está dado en terminos de vw (view width)*/
+    width: 100vw;
+    /* height está dado en terminos de vh (view height)*/
+    height: 100vh;
+    /* Justify content hace que el contenido del flex esté justificado en el medio */
+    justify-content: center;
+    /* align-items hace que los elementos dentro del flex se ubiquen en el centro*/
+    align-items: center;
+
+    background-color: hsl(var(--hue), 100%, 20%);
+}
+
+body.correcto{
+    --hue: var(--hue-correcto);
+}
+
+body.mal{
+    --hue: var(--hue-mal);
+}
+
+.container{
+    width: 800px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 3px;
+    padding: 10px;
+    /*  valores: 0 0 blurr ?*/
+    box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid{
+     /*  display: grid permite ordenar los elementos como si fuese una tabla */
+    display: grid;
+     /*  grid-template-colums: permite ordenar los elementos en columnas */
+    grid-template-columns: repeat(2, auto);
+     /*  gap: es el espacio entre los elementos */
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn{
+    --hue: var(--hue-neutral);
+    border: 1px solid hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(--hue), 100%, 50%);
+    border-radius: 3px;
+    padding: 5px 10px;
+    color: white;
+    outline:none;
+    
+}
+
+.btn:hover{
+    border-color: black;
+}
+
+.btn.correcto{
+    --hue:var(--hue-correcto);
+    color: black;
+}
+
+.btn.mal{
+    --hue:var(--hue-mal);
+    color: black;
+}
+
+.start-btn, .next-btn{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.hide{
+    display: none;
+}
